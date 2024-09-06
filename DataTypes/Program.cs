@@ -1,7 +1,10 @@
-﻿using System;
+﻿//#define NUMERIC_TYPES
+//#define LITERALS
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +17,7 @@ namespace DataTypes
         static readonly string delimeter2 = "\n===========================\n";
         static void Main(string[] args)
         {
+#if NUMERIC_TYPES
             #region Boolean
             Console.WriteLine("C#, DataTypes");
             Console.WriteLine(Convert.ToBoolean(-1));
@@ -42,6 +46,48 @@ namespace DataTypes
             //its envelope-class is Int64 or UInt64
             #endregion
 
+#endif
+
+#if LITERALS
+            Console.WriteLine(123.0f.GetType());//123.1f 123f - float(single)
+            Console.WriteLine(123m.GetType());//123m - decimal(Decimal)
+            Console.WriteLine(5D.GetType());
+            //5D - double(Double)
+
+            //GetType return the wrapper class of type 
+
+#endif
+            #region conversions1
+            //Console.WriteLine(((byte)5).GetType().Name);
+            //int a = 3;
+            //uint b = uint.MaxValue;
+            ////a = b;
+
+
+            //Console.WriteLine(a + " " + b);
+            //a = (byte)5; 
+            #endregion
+            try
+            {
+                int a = int.MaxValue;
+                uint b = uint.MaxValue;
+                Console.WriteLine(b);
+                Console.WriteLine(b.GetType());
+                Console.WriteLine(a + b);
+                Console.WriteLine((a + b).GetType());
+
+
+                long c = long.MaxValue;
+                Console.WriteLine(b + c);
+                Console.WriteLine((b + c).GetType());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                //Console.WriteLine(b);
+            }
+           // uint b = uint.MaxValue;
+           // Console.WriteLine(b);
         }
     }
 }

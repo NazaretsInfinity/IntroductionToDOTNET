@@ -52,24 +52,22 @@ namespace Geometrical
             //rhombus
             for (int i = 0; i <= s * 2; ++i)
             {
-                if (i <= s)
+                for (int j = 0; j < s * 2; ++j)
                 {
-                    for (int j = 0; j < s * 2; ++j)
+                    if (i <= s)
                     {
                         if (j < s) Console.Write(j == s - i ? "/" : " ");
                         else Console.Write(j == s + i - 1 ? "\\" : " ");
                     }
-                    Console.WriteLine();
+
+                    else
+                    {
+                        if (j < s) Console.Write(j == i - s - 1 ? "\\" : " ");
+                        else Console.Write(s * 2 - j == i - s ? "/" : " ");
+                    }
                 }
-                else
-                {
-                  for (int j = 0; j < s * 2; ++j)
-                  {
-                      if (j < s) Console.Write(j == i-s-1 ? "\\" : " ");
-                      else Console.Write(s*2-j==i-s ? "/": " ");
-                  }
-                  Console.WriteLine();
-                }
+                Console.WriteLine();
+
             }
             Console.Write(delimeter);
 
