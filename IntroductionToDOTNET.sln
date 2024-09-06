@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroductionToDOTNET", "IntroductionToDOTNET\IntroductionToDOTNET.csproj", "{D5A9ECB9-CE14-4DFA-8492-BD21296841A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{2582E3D3-A9DE-415B-ADA3-DD3E53F68357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometrical", "Geometrical\Geometrical.csproj", "{13F969D0-B232-4BB2-8B04-4CAD3B3ACE4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D5A9ECB9-CE14-4DFA-8492-BD21296841A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5A9ECB9-CE14-4DFA-8492-BD21296841A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5A9ECB9-CE14-4DFA-8492-BD21296841A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2582E3D3-A9DE-415B-ADA3-DD3E53F68357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2582E3D3-A9DE-415B-ADA3-DD3E53F68357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2582E3D3-A9DE-415B-ADA3-DD3E53F68357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2582E3D3-A9DE-415B-ADA3-DD3E53F68357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F969D0-B232-4BB2-8B04-4CAD3B3ACE4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F969D0-B232-4BB2-8B04-4CAD3B3ACE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F969D0-B232-4BB2-8B04-4CAD3B3ACE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F969D0-B232-4BB2-8B04-4CAD3B3ACE4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
