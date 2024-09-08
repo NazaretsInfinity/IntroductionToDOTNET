@@ -88,13 +88,25 @@ namespace Geometrical
                     else if (i == 0 && k == s) Console.Write(Convert.ToChar(0x2513));
                     else if (i == s && k == s) Console.Write(Convert.ToChar(0x251B));
                     else if (i == s && k == 0) Console.Write(Convert.ToChar(0x2517));
-                    else if (i == 0 || i == s) Console.Write(Convert.ToChar(0x2501));
+                    else if (i == 0 || i == s) Console.Write((char)0x2501);
                     else if (k == 0 || k == s) Console.Write(Convert.ToChar(0x2503));
                     else Console.Write(i % 2 == k % 2 ? Convert.ToChar(0x2588) : ' ');
                 }
                 Console.WriteLine();
             }
             Console.Write(delimeter);
+
+            //hard-chess
+            for (int i = 0; i < s; ++i)
+                for (int l = 0; l < 5; ++l)
+                {
+                        for (int j = 0; j < 5 * s; ++j)
+                        {
+                            Console.Write((j%10<5 && i%2==0) || (j % 10 >= 5 && i % 2 != 0) ? "* " : "  ");
+                        }
+                    Console.WriteLine();
+                }
+
         }
     }
 }
