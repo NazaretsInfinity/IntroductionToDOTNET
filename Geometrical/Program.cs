@@ -97,16 +97,14 @@ namespace Geometrical
             Console.Write(delimeter);
 
             //hard-chess
-            for (int i = 0; i < s; ++i)
-                for (int l = 0; l < 5; ++l)
+            for (int i = 0; i < s*5; ++i)
                 {
-                        for (int j = 0; j < 5 * s; ++j)
-                        {
-                            Console.Write((j%10<5 && i%2==0) || (j % 10 >= 5 && i % 2 != 0) ? "* " : "  ");
-                        }
+                    for (int j = 0; j < 5 * s; ++j)
+                    {
+                        Console.Write((j % 10 < 5 && i%10<5) || (j % 10 >= 5 && i% 10>=5) ? "* " : "  ");
+                    }
                     Console.WriteLine();
                 }
-
         }
     }
 }
