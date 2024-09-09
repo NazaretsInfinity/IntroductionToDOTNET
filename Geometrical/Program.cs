@@ -101,7 +101,7 @@ namespace Geometrical
             for (int i = 0; i < s * 5; ++i)
             {
                 for (int j = 0; j < 5 * s; ++j)
-                    Console.Write((j % 10 < 5) & (i % 10 < 5) | (j % 10 >= 5) & (i % 10 >= 5) ? "* " : "  ");
+                    Console.Write((j % 10 < 5 & i % 10 < 5) | (j % 10 >= 5 & i % 10 >= 5) ? "* " : "  ");
                 Console.WriteLine();
             }
         }
