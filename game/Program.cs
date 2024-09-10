@@ -11,10 +11,14 @@ namespace game
         static void Main(string[] args)
         {
 
-            
-            Console.Write("Enter where to start: ");
-            int x = Convert.ToInt32(Console.ReadLine());
-            int y = Convert.ToInt32(Console.ReadLine());
+
+            //Console.Write("Enter where to start: ");
+            //int x = Convert.ToInt32(Console.ReadLine());
+            //int y = Convert.ToInt32(Console.ReadLine());
+
+            Random rand = new Random();
+            int x = (rand.Next(Console.WindowWidth));
+            int y = (rand.Next(Console.WindowHeight));
             Console.SetCursorPosition(x,y);
 
             ConsoleKey key;
