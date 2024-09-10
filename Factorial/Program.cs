@@ -20,15 +20,36 @@ namespace Factorial
             return v;
         }
 
+
         static void Main(string[] args)
         {
+#if checking
             Console.Write("Enter your number: ");
             int v = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($" it's {factorial(v)}.");
 
             BigInteger factor = 1;
-            for (int i = v; i > 0; --i)factor *= i;
-            Console.WriteLine($" its factorial is {factor}.");
+
+            for (int i = v; i > 0; --i) factor *= i;
+            Console.WriteLine($" its factorial is {factor}."); 
+#endif
+
+            Console.Write("Enter your number: ");
+            int v = Convert.ToInt32(Console.ReadLine());
+            BigInteger f = 1;
+            try
+            {
+                for (int i = 1; i <= v; ++i)
+                {
+                    f *= i;
+                    Console.WriteLine($"{i}! = {f}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,7 @@ namespace Geometrical
             Console.Write(delimeter);
 
             //rhombus
+
             for (int i = 0; i <= s * 2; ++i)
             {
                 for (int j = 0; j < s * 2; ++j)
@@ -66,13 +68,24 @@ namespace Geometrical
                         else Console.Write(s * 2 - j == i - s ? "/" : " ");
                     }
                 }
-                Console.WriteLine();
+                Console.WriteLine(); 
 
             }
             Console.Write(delimeter);
 
+            for (int i = 0; i < s * 2; ++i)
+            {
+                for (int j = 0; j < s * 2; ++j)
+                {
+                    if (i==j-s|| j == i -s) Console.Write("\\");
+                    else if(i==s-1-j || i - s == s*2 -1-j)Console.Write("/");
+                    else Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+
             //chess
-            for(int i = 0; i < s;++i)
+            for (int i = 0; i < s;++i)
             {
                 for(int j = 0;j < s; ++j)Console.Write(j%2==i%2 ? "+ " : "- ");    
                 Console.WriteLine();
@@ -104,6 +117,8 @@ namespace Geometrical
                     Console.Write((j % 10 < 5 & i % 10 < 5) | (j % 10 >= 5 & i % 10 >= 5) ? "* " : "  ");
                 Console.WriteLine();
             }
+
+
         }
     }
 }
