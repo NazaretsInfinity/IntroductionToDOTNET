@@ -38,7 +38,7 @@ namespace game
 
             Console.Write("Enter what to solve: ");
             string s = Console.ReadLine();
-            char[] dels = {'+', '-', '*', '/'};
+            char[] dels = {'+', '-', '*', '/' , '='};
             string[] tokens = s.Split(dels);
            
 
