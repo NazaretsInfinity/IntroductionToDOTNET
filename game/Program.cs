@@ -88,6 +88,7 @@ namespace game
                 }
 
             }
+              Console.WriteLine($"It's {result}");
 #endif
         }
     }
