@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,13 +39,16 @@ namespace game
 
             Console.Write("Enter what to solve: ");
             string s = Console.ReadLine();
-            char[] dels = {'+', '-', '*', '/' , '='};
+            char[] dels = { '+', '-', '*', '/', '=' };
+            
             string[] tokens = s.Split(dels);
-           
 
+
+
+            double result = 0;
             double a = Convert.ToDouble(tokens[0]);
             double b = Convert.ToDouble(tokens[1]);
-            double result = 0;
+           
 
 
             if (s.Contains('+')) result = a+b;
@@ -53,6 +57,38 @@ namespace game
             else if (s.Contains("/")) result = a/b;
 
             Console.WriteLine($"It's {result}");
+
+
+#if inprogress
+
+
+            double[] numbers = new double[tokens.Length];
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                numbers[i] = Convert.ToDouble(tokens[i]);
+            }
+
+            char[] delsop = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+            string[] chars = s.Split(delsop);
+
+
+
+            double result = numbers[0];
+
+            for (int i = 0; i < numbers.Length - 1; ++i)
+            {
+
+                switch (Convert.ToChar(chars[i + 1]))
+                {
+                    case '+': result += numbers[i + 1]; break;
+                    case '-': result -= numbers[i + 1]; break;
+                    case '*': result *= numbers[i + 1]; break;
+                    case '/': result /= numbers[i + 1]; break;
+                    default: continue;
+                }
+
+            }
+#endif
         }
     }
 }
