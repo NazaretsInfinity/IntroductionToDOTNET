@@ -1,5 +1,6 @@
 ﻿#define unidimensional
 #define two_dimensional
+#define jagged
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace arrays
             }
             Console.WriteLine();
 
-            //==========================================================================//
+            //=================================START====================================//
 
             int result = 0;
             int count = 0;
@@ -63,7 +64,7 @@ namespace arrays
             Console.WriteLine($"That's the maximum: {result}");
 
 
-            //=========================================================================//
+            //================================END======================================//
 #endif
 #if two_dimensional
 
@@ -86,7 +87,7 @@ namespace arrays
                 Console.WriteLine();
             }
 
-            //=========================================================================//
+            //==================================START===================================//
             int result = 0;
             int count = 0;
             for(int i = 0; i< arr.GetLength(0);++i)
@@ -115,9 +116,9 @@ namespace arrays
                     if (result < arr[i, j]) result = arr[i, j];
                 }
             Console.WriteLine($"Max: {result}");
-            //=========================================================================//
+            //===================================END===================================//
 #endif
-#if true3
+#if jagged
             int[][] arr = new int[][]
                 {
                     new int[]{0,1,1,2 },
