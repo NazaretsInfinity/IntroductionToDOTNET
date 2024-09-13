@@ -38,15 +38,13 @@ namespace arrays
             //=================================START====================================//
 
             int result = 0;
-            int count = 0;
             foreach (int i in arr)
             {
-                result += i;
-                ++count;
+                result += i;               
             }
             Console.WriteLine($"Sum is {result}");
 
-            Console.WriteLine($"Average is {(double)result/count}");
+            Console.WriteLine($"Average is {(double)result/arr.Length}");
 
 
             result = arr[1];
@@ -66,7 +64,7 @@ namespace arrays
 
             //================================END======================================//
 #endif
-#if two_dimensional1
+#if two_dimensional2
 
             //int[,] arr = new int[3, 4];
             int[,] arr = new int[,]
@@ -118,7 +116,7 @@ namespace arrays
             Console.WriteLine($"Max: {result}");
             //===================================END===================================//
 #endif
-#if jagged
+#if jagged3
             int[][] arr = new int[][]
                 {
                     new int[]{0,1,1,2 },
