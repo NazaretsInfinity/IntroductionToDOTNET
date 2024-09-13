@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,18 +65,22 @@ namespace game
             double a = Convert.ToDouble(tokens[0]);
             double b = Convert.ToDouble(tokens[1]);
 
-            if (s.Contains('+')) result = a + b;
-            //'Contains' determines if the string have a symbol or substring(type it in parameters) 
-            else if (s.Contains("-")) result = a - b;
-            else if (s.Contains("*")) result = a * b;
-            else if (s.Contains("/")) result = a / b;
-            else Console.Write("No ar.operations.  ");
+            //if (s.Contains('+')) result = a + b;
+            ////'Contains' determines if the string have a symbol or substring(type it in parameters) 
+            //else if (s.Contains("-")) result = a - b;
+            //else if (s.Contains("*")) result = a * b;
+            //else if (s.Contains("/")) result = a / b;
+            //else Console.Write("No ar.operations.  ");
+            switch (s[1])
+            {
+                case '+': result = a+b; break;
+                case '-': result = a-b; break;
+                case '*': result = a*b; break;
+                case '/': result = a/b; break;
 
+            }
             Console.WriteLine($"It's {result}"); 
 #endif
-
-
-
 
 #if true3
 
