@@ -1,8 +1,11 @@
-﻿using System;
+﻿#define unidimensional
+#define two_dimensional
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace arrays
 {
@@ -10,7 +13,7 @@ namespace arrays
     {
         static void Main(string[] args)
         {
-#if unidimensional
+#if unidimensional1
             //int[] arr = new int[] { 3, 5, 8, 13, 21 };
             //int[] arr = { 3, 5, 8, 13, 21 }; it's alright
 
@@ -45,14 +48,14 @@ namespace arrays
             Console.WriteLine($"Average is {(double)result/count}");
 
 
-            result = arr[0];
+            result = arr[1];
             for (int i = 0; i < arr.Length; ++i)
             {
                 if (result > arr[i]) result = arr[i];
             }
             Console.WriteLine($"That's the minimum: {result}");
 
-            result = arr[0];
+            result = arr[1];
             for (int i = 0; i < arr.Length; ++i)
             {
                 if (result < arr[i]) result = arr[i];
@@ -62,7 +65,8 @@ namespace arrays
 
             //=========================================================================//
 #endif
-#if true2
+#if two_dimensional
+
             //int[,] arr = new int[3, 4];
             int[,] arr = new int[,]
                 {
@@ -80,9 +84,38 @@ namespace arrays
                     Console.Write(arr[i, j] + "\t");
                 }
                 Console.WriteLine();
-            } 
+            }
 
-            
+            //=========================================================================//
+            int result = 0;
+            int count = 0;
+            for(int i = 0; i< arr.GetLength(0);++i)
+                for(int j = 0; j < arr.GetLength(1);++j)
+                {
+                    result += arr[i, j];
+                    ++count;
+                }
+            Console.WriteLine($"Sum is {result}");
+
+            Console.WriteLine($"Average is  {(double)result/count}");
+
+            result = arr[0, 0];
+            for (int i = 0; i < arr.GetLength(0); ++i)
+                for (int j = 0; j < arr.GetLength(1); ++j)
+                {
+                    if (result > arr[i, j])result = arr[i, j]; 
+                }
+            Console.WriteLine($"Min: {result}");
+
+
+            result = arr[0, 0];
+            for (int i = 0; i < arr.GetLength(0); ++i)
+                for (int j = 0; j < arr.GetLength(1); ++j)
+                {
+                    if (result < arr[i, j]) result = arr[i, j];
+                }
+            Console.WriteLine($"Max: {result}");
+            //=========================================================================//
 #endif
 #if true3
             int[][] arr = new int[][]
@@ -99,7 +132,7 @@ namespace arrays
                 }
                 Console.WriteLine();
             }
-#endif       
+#endif
 
         }
     }
