@@ -71,8 +71,12 @@ namespace game
             //else if (s.Contains("*")) result = a * b;
             //else if (s.Contains("/")) result = a / b;
             //else Console.Write("No ar.operations.  ");
-            switch (s[1])
+           
+            string buff = s.Replace(" ", "");
+           
+            switch (buff[1])
             {
+
                 case '+': result = a+b; break;
                 case '-': result = a-b; break;
                 case '*': result = a*b; break;
