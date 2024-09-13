@@ -66,7 +66,7 @@ namespace arrays
 
             //================================END======================================//
 #endif
-#if two_dimensional
+#if two_dimensional1
 
             //int[,] arr = new int[3, 4];
             int[,] arr = new int[,]
@@ -133,6 +133,40 @@ namespace arrays
                 }
                 Console.WriteLine();
             }
+            //==================================START===================================//
+            int result = 0;
+            int count = 0;
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                for (int j = 0; j < arr[i].Length; ++j)
+                {
+                    result += arr[i][j];
+                    ++count;
+                }
+
+            }
+                Console.WriteLine($"Sum is {result}");
+                Console.WriteLine($"Average is {(double)result / count}");
+
+
+            result = arr[0][1];
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                for (int j = 0; j < arr[i].Length; ++j)
+                {
+                    if(result > arr[i][j])result = arr[i][j];
+                }
+            }Console.WriteLine($"Min: {result}");
+
+            result = arr[0][1];
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                for (int j = 0; j < arr[i].Length; ++j)
+                {
+                    if (result < arr[i][j]) result = arr[i][j];
+                }
+            }
+            Console.WriteLine($"Max: {result}");
 #endif
 
         }
