@@ -55,7 +55,7 @@ namespace game
            
 #endif
 
-#if true
+#if true2
             Console.Write("Enter what to solve: ");
             string s = Console.ReadLine();
 
@@ -86,14 +86,13 @@ namespace game
             Console.WriteLine($"It's {result}"); 
 #endif
 
-#if true3
+#if true
 
 
       Console.Write("Enter what to solve: ");
             string s = Console.ReadLine();
-            char[] dels = { '+', '-', '*', '/', '=' };
             
-            string[] tokens = s.Split(dels);
+            string[] tokens = s.Split('+', '-', '*', '/', '=');
 
 
             double[] numbers = new double[tokens.Length];
@@ -101,18 +100,16 @@ namespace game
             {
                 numbers[i] = Convert.ToDouble(tokens[i]);
             }
-
-            char[] delsop = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-            string[] chars = s.Split(delsop);
-
-
-
+            string[] chars = s.Split('1', '2', '3', '4', '5', '6', '7', '8', '9', '0');
             double result = numbers[0];
 
+
+
+            
             for (int i = 0; i < numbers.Length - 1; ++i)
             {
-
-                switch (Convert.ToChar(chars[i + 1]))
+                char buff = Convert.ToChar((chars[i + 1].Replace(" ", "")));
+                switch (buff)
                 {
                     case '+': result += numbers[i + 1]; break;
                     case '-': result -= numbers[i + 1]; break;
